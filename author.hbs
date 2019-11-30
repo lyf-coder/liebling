@@ -17,14 +17,15 @@ into the {body} of the default.hbs template --}}
     {{#if profile_image}}
     <div class="m-hero-avatar" style="background-image: url({{profile_image}});"></div>
     {{else}}
-    <div class="m-hero-avatar" style="background-image: url({{asset "images/default-avatar-square-normal.jpg"}});"></div>
+    <div class="m-hero-avatar" style="background-image: url({{asset "images/default-avatar-square-normal.jpg"}});">
+    </div>
     {{/if}}
     <h1 class="m-hero-title">{{name}}</h1>
     {{#if bio}}
     <p class="m-hero-description">{{bio}}</p>
     {{/if}}
     <div class="m-hero__meta">
-      {{#has any="twitter, facebook, website"}}
+      {{!-- {{#has any="twitter, facebook, website"}}
       <ul class="m-hero-social">
         {{#if website}}
         <li>
@@ -48,7 +49,7 @@ into the {body} of the default.hbs template --}}
         </li>
         {{/if}}
       </ul>
-      {{/has}}
+      {{/has}} --}}
       <ul class="m-hero-stats">
         <li>
           {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
@@ -62,7 +63,7 @@ into the {body} of the default.hbs template --}}
   </div>
   </section>
   {{/author}}
-  
+
   <main>
     <div class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
